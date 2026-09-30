@@ -3,7 +3,7 @@ import AppKit
 import QuartzCore
 import SwiftUI
 
-@available(macOS 13.0, *)
+@available(macOS 12.0, *)
 @MainActor
 final class FloatingDropPanel: NSPanel {
     private weak var panelController: PermissionFlowController?

@@ -66,7 +66,7 @@ PermissionFlow
 
 ## 运行要求
 
-- macOS 13+
+- macOS 12+（`PermissionFlowButton` 需要 macOS 13+）
 - Swift 6 Package Toolchain
 - 宿主应用为 SwiftUI + AppKit macOS 应用
 
@@ -133,8 +133,8 @@ package 地址和安装入口与之前保持一致。现在变化的是 product 
 
 平台支持：
 
-- `PermissionFlow`：`macOS 13+`
-- `SystemSettingsKit`：`macOS 13+`、`iOS 16+`
+- `PermissionFlow`：`macOS 12+`（`PermissionFlowButton`：`macOS 13+`）
+- `SystemSettingsKit`：`macOS 12+`、`iOS 16+`
 
 其中 `SystemSettingsKit` 在 iOS 上是“部分支持”状态。macOS 那套基于 pane identifier 和 anchor 的 deeplink API 仍然只在 macOS 暴露；iOS 侧只提供 UIKit 公开允许的设置入口，例如当前应用的设置页。
 

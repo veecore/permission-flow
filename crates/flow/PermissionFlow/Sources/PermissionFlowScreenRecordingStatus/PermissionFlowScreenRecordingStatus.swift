@@ -2,7 +2,7 @@
 import Foundation
 import PermissionFlow
 
-@available(macOS 13.0, *)
+@available(macOS 12.0, *)
 public enum PermissionFlowScreenRecordingStatus {
     @MainActor
     public static func register() {

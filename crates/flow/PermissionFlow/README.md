@@ -67,7 +67,7 @@ It opens the correct privacy page automatically and, for panes that support drag
 
 ## Requirements
 
-- macOS 13+
+- macOS 12+ (`PermissionFlowButton` requires macOS 13+)
 - Swift 6 package toolchain
 - SwiftUI + AppKit host application
 
@@ -134,8 +134,8 @@ Why this split matters:
 
 Platform support:
 
-- `PermissionFlow`: `macOS 13+`
-- `SystemSettingsKit`: `macOS 13+`, `iOS 16+`
+- `PermissionFlow`: `macOS 12+` (`PermissionFlowButton`: `macOS 13+`)
+- `SystemSettingsKit`: `macOS 12+`, `iOS 16+`
 
 `SystemSettingsKit` is intentionally partial on iOS. The macOS deeplink-based pane and anchor APIs remain macOS-only, while iOS only exposes destinations that are publicly supported by UIKit, such as the current app's Settings page.
 

@@ -4,7 +4,7 @@ import Combine
 import SystemSettingsKit
 import SwiftUI
 
-@available(macOS 13.0, *)
+@available(macOS 12.0, *)
 @MainActor
 public final class PermissionFlowController: ObservableObject {
     /// The package exposes a single active floating panel at a time so opening
@@ -251,7 +251,7 @@ public final class PermissionFlowController: ObservableObject {
     }
 }
 
-@available(macOS 13.0, *)
+@available(macOS 12.0, *)
 private extension Array where Element == URL {
     /// Normalizes and de-duplicates `.app` bundle URLs.
     func uniqueAppURLs() -> [URL] {

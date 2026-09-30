@@ -1,7 +1,7 @@
 #if os(macOS)
 import Foundation
 
-@available(macOS 13.0, *)
+@available(macOS 12.0, *)
 public struct UnsupportedPermissionStatusProvider: PermissionStatusProviding {
     public var capability: PermissionStatusCapability { .unsupported }
     

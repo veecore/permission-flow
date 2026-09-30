@@ -1,6 +1,6 @@
 import Foundation
 
-@available(macOS 13.0, iOS 16.0, *)
+@available(macOS 12.0, iOS 16.0, *)
 public enum SystemSettings {
 #if os(macOS)
     /// Opens a System Settings page from a pane identifier and optional anchor.

@@ -1,7 +1,7 @@
 #if os(macOS)
 import Foundation
 
-@available(macOS 13.0, *)
+@available(macOS 12.0, *)
 public struct PermissionFlowButtonState: Equatable, Sendable {
     /// Localization key for the button title.
     public let titleKey: String
@@ -17,7 +17,7 @@ public struct PermissionFlowButtonState: Equatable, Sendable {
     }
 }
 
-@available(macOS 13.0, *)
+@available(macOS 12.0, *)
 extension PermissionFlowButtonState {
     /// Creates button state from authorization state.
     public static func make(from state: PermissionAuthorizationState) -> Self {

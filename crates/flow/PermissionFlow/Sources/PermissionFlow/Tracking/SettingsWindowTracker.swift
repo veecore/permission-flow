@@ -3,7 +3,7 @@ import AppKit
 @preconcurrency import ApplicationServices
 import CoreGraphics
 
-@available(macOS 13.0, *)
+@available(macOS 12.0, *)
 @MainActor
 final class SettingsWindowTracker {
     /// Polling remains enabled even when AX is available because System Settings

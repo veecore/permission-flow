@@ -1,5 +1,5 @@
 #if os(macOS)
-@available(macOS 13.0, *)
+@available(macOS 12.0, *)
 public enum PermissionFlow {
     /// Creates the object that owns System Settings navigation, window
     /// tracking, and the floating drag panel lifecycle.

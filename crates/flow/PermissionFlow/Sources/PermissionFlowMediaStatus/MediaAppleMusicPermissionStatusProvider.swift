@@ -6,7 +6,7 @@ import StoreKit
 import MusicKit
 #endif
 
-@available(macOS 13.0, *)
+@available(macOS 12.0, *)
 public struct MediaAppleMusicPermissionStatusProvider: PermissionStatusProviding {
     public var capability: PermissionStatusCapability { .preflightSupported }
 

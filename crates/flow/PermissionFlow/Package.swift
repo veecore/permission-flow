@@ -7,7 +7,7 @@ let package = Package(
     name: "PermissionFlow",
     defaultLocalization: "en",
     platforms: [
-        .macOS(.v13),
+        .macOS(.v12),
         .iOS(.v16)
     ],
     products: [

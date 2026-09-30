@@ -2,7 +2,7 @@
 import ApplicationServices
 import Foundation
 
-@available(macOS 13.0, *)
+@available(macOS 12.0, *)
 public struct AccessibilityPermissionStatusProvider: PermissionStatusProviding {
     public var capability: PermissionStatusCapability { .preflightSupported }
     

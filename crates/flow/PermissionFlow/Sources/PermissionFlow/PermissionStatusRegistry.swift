@@ -2,7 +2,7 @@
 import ApplicationServices
 import Foundation
 
-@available(macOS 13.0, *)
+@available(macOS 12.0, *)
 public protocol PermissionStatusProviding: Sendable {
     /// Describes whether this provider can reliably check permission status.
     var capability: PermissionStatusCapability { get }
@@ -11,7 +11,7 @@ public protocol PermissionStatusProviding: Sendable {
     func authorizationState() -> PermissionAuthorizationState
 }
 
-@available(macOS 13.0, *)
+@available(macOS 12.0, *)
 @MainActor
 public enum PermissionStatusRegistry {
     private static let lock = NSLock()

@@ -1,7 +1,7 @@
 #if os(macOS)
 import Foundation
 
-@available(macOS 13.0, *)
+@available(macOS 12.0, *)
 enum PermissionFlowLocalizer {
     /// Resolves a localized string from the best matching `.lproj` bundle for
     /// the injected locale. This keeps all custom locale selection in one
@@ -39,14 +39,50 @@ enum PermissionFlowLocalizer {
         let locale = Locale(identifier: normalizedIdentifier)
 
         var preferences = [normalizedIdentifier]
-        if let identifier = locale.language.languageCode?.identifier {
-            if let script = locale.language.script?.identifier {
+        if let identifier = languageCode(of: locale) {
+            if let script = scriptCode(of: locale) {
                 preferences.append("\(identifier)-\(script)")
             }
             preferences.append(identifier)
         }
 
         return Array(NSOrderedSet(array: preferences)) as? [String] ?? preferences
+    }
+
+    @available(macOS 13, *)
+    private static func modernLanguageCode(of locale: Locale) -> String? {
+        locale.language.languageCode?.identifier
+    }
+
+    @available(macOS 13, *)
+    private static func modernScriptCode(of locale: Locale) -> String? {
+        locale.language.script?.identifier
+    }
+
+    private static func languageCode(of locale: Locale) -> String? {
+        if #available(macOS 13, *) {
+            return modernLanguageCode(of: locale)
+        }
+        return locale.languageCode
+    }
+
+    private static func scriptCode(of locale: Locale) -> String? {
+        if #available(macOS 13, *) {
+            return modernScriptCode(of: locale)
+        }
+        return locale.scriptCode ?? inferredScriptCode(for: locale)
+    }
+
+    /// `Locale.Language` is macOS 13+, and before it the script is only known
+    /// when the identifier names one. The Chinese catalogues are the only ones
+    /// in this package that are split by script, so their regions are mapped
+    /// here to keep `zh-CN` and `zh-TW` on the matching catalogue.
+    static func inferredScriptCode(for locale: Locale) -> String? {
+        switch locale.regionCode {
+        case "CN", "SG": "Hans"
+        case "TW", "HK", "MO": "Hant"
+        default: nil
+        }
     }
 }
 #endif

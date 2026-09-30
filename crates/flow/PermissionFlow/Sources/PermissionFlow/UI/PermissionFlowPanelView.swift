@@ -1,7 +1,7 @@
 #if os(macOS)
 import SwiftUI
 
-@available(macOS 13.0, *)
+@available(macOS 12.0, *)
 struct PermissionFlowPanelView: View {
     @ObservedObject var controller: PermissionFlowController
 
@@ -116,7 +116,7 @@ struct PermissionFlowPanelView: View {
     }
 }
 
-@available(macOS 13.0, *)
+@available(macOS 12.0, *)
 private struct HeaderDirectionIcon: View {
     let isDragging: Bool
 

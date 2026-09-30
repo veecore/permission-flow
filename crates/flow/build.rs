@@ -1,6 +1,6 @@
 use swift_rs::SwiftLinker;
 
-const MINIMUM_MACOS_VERSION: &str = "13.0";
+const MINIMUM_MACOS_VERSION: &str = "12.0";
 const SWIFT_PACKAGE_NAME: &str = "PermissionFlowShimFFI";
 const SWIFT_PACKAGE_PATH: &str = "PermissionFlowShim";
 

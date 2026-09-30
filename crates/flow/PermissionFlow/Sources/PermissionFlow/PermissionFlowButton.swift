@@ -2,6 +2,9 @@
 import AppKit
 import SwiftUI
 
+// `LocalizedStringResource` is macOS 13+, so this convenience view keeps the
+// higher floor while the rest of the package, including the controller and the
+// floating panel, runs on macOS 12.
 @available(macOS 13.0, *)
 public struct PermissionFlowButton: View {
     @Environment(\.locale) var locale

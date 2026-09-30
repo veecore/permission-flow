@@ -2,7 +2,7 @@
 import AppKit
 import Foundation
 
-@available(macOS 13.0, *)
+@available(macOS 12.0, *)
 public struct PermissionFlowConfiguration: Sendable {
     /// Apps that should already appear in the floating panel.
     public var requiredAppURLs: [URL]
